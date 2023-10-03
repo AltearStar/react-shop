@@ -1,0 +1,495 @@
+@import "Buttons.scss";
+@import "UIComponents.scss";
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+body {
+   background-color: rgb(250, 250, 250);
+}
+body.active {
+   height: 50vh;
+   overflow-y: scroll;
+ }
+
+.header{
+   width: 100vw;
+   background-color: rgb(197, 197, 197);
+}
+.header-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 800px;
+   margin: 0 auto;
+   padding: 5px 20px;
+
+   @media (max-width: 800px) {
+      width: 100%;
+      padding: 5px 10px;
+   }
+    
+   &__right{
+      display: flex;
+      align-items: center; 
+
+      @media (max-width: 800px) {
+         display: block;
+         position: fixed;
+         width: 60vw;
+         height: 100vh;
+         right: -62vw;
+         top: 0;
+         bottom: 0;
+         padding-top: 10px;
+         background-color: rgb(255, 255, 255);
+         z-index: 1000;
+         box-shadow: -2px -2px 2px  rgba(0, 0, 0, 0.137);
+         transition: right 0.5s;
+      }
+
+      div, button{
+         margin-left: 5px;
+
+         @media (max-width: 800px) {
+            width: 90%;
+            margin: 5px 5%;
+         }
+      }
+   }
+
+   .basket-counter{
+      background-color: #ff6633c7;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      font-size: 16px;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 800px) {
+         margin-right: -20px;
+      }
+   }
+
+   .Button-Base {
+      padding: 6px 10px;
+   }
+}
+
+.product-tile {
+   width: 100%;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   padding: 10px 0px;
+}
+
+.product-block {
+   background-color: white;
+   display: flex;
+   justify-content: flex-start;
+   flex-flow: column;
+   width: 220px;
+   margin: 10px;
+   padding-bottom: 10px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 4px 0px rgba(255, 102, 51, 0.2);
+   cursor: pointer;
+
+   @media (max-width: 800px) {
+      width: 300px;
+   }
+
+   &__image {
+      height: 160px;
+      width: auto;
+      margin-bottom: 5px;
+      padding: 5px;      
+
+      @media (max-width: 800px) {
+         width: 250px;
+         margin: 0 auto;
+      }
+      
+      img {
+         width: 100%;
+         height: auto;
+         border-radius: 5px;
+         
+      }
+   }
+   &__favorite {
+      position: relative;
+      top: -160px;
+      $height: 40px;
+      height: $height;
+      margin-bottom: (-$height);
+      margin-top: 5px;
+      margin-right: 5px;
+      margin-left: auto;
+   }
+   &__cost {
+      margin: 0 5px;
+      font-weight: 700;
+   }
+   &__name {
+      align-items: center;
+      display: flex;
+      flex-grow: 1;
+      margin: 0 5px;
+      padding-top: 5px;
+   }
+   &__rating {
+      margin: 0 5px;
+      padding-top: 5px;
+
+      img {
+         margin-right: 2px;
+      }
+   }
+   &__button {
+      margin: 0 5px;
+      padding-top: 5px;
+
+      button {
+         width: 100%;
+      }
+   }
+}
+
+.Product-Card {
+   width: 100%;
+   margin: 10px auto;
+   display: flex;
+   justify-content: flex-start;
+   background-color: rgb(228, 228, 228);
+   padding: 20px 5px;
+   border-radius: 4px;
+
+   &__Image {
+      width: 300px;     
+
+      @media (max-width: 800px) {
+         width: 200px;
+         display: flex;
+         align-items: center;
+      }
+
+      img {
+         width: 100%;
+         height: auto;
+         border-radius: 5px;
+      }
+   }
+   &__Information {
+      margin-left: 20px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+   }
+   &__Rating {
+      img {
+         height: 15px;
+         margin-right: 4px;
+      }
+   }
+   &__Name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+   }
+   &__Description {
+      margin-top: 10px;
+      flex-grow: 1;
+   }
+   &__Cost {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+   }
+   &__Buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-start;
+
+      .Button-Base {
+         min-width: 150px;
+      }
+
+      .Favorite {
+         min-width: 40px;
+      }
+
+      button {
+         margin-right: 20px;
+      }
+   }
+}
+
+.filter-panel {
+   width: 800px;
+   margin: 0 auto;
+   padding-top: 20px;
+   padding-right: 20px;
+   display: flex;
+   justify-content: flex-end; 
+
+   @media (max-width: 800px) {
+      width: 100%;
+      justify-content: flex-start; 
+      flex-direction: column;
+      padding-right: 0;
+
+      .Button-Base {
+         width: 90%;
+         margin: 0 auto 10px auto;}
+   }
+
+   select {
+      margin-right: 10px;     
+
+      @media (max-width: 800px) {
+         width: 90%;
+         margin: 0 auto 10px auto;
+      }
+   }
+
+   .Base-Input {
+      margin-right: 30px;
+      margin-left: 20px;
+      flex-grow: 1;  
+
+      @media (max-width: 800px) {
+         width: 90%;
+         margin: 0 auto 10px auto;
+      }
+   }
+}
+
+.Prodict-Card-Page {
+   width: 800px;
+   margin: 0 auto;
+
+   @media (max-width: 800px) {
+      width: 100%;
+      padding: 0 5px;
+
+      h1{
+         font-size: 24px;
+      }
+   }
+}
+
+.Product-List-Page {
+   width: 800px;
+   margin: 0 auto;
+
+   @media (max-width: 800px) {
+      width: 100%;
+   }
+}
+
+.Product-Basket-Page {
+   width: 800px;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+
+   @media (max-width: 800px) {
+      width: 90%;
+      justify-content: space-between;
+      flex-direction: column;
+   }
+
+   h1 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      flex-basis: 100%;
+   }
+
+   h2{
+      margin: 10px auto;
+      font-weight: 500;
+   }
+
+   &__productBlock {
+      flex-grow: 1;
+   }
+}
+.Product-Basket-Card {
+   width: 100%;
+   margin: 10px auto;
+   display: flex;
+   justify-content: flex-start;
+   background-color: rgb(228, 228, 228);
+   padding: 10px 5px;
+   border-radius: 4px;
+
+   &__Image {
+      width: 150px;
+      
+      @media (max-width: 800px) {
+         width: 120px;
+         display: flex;
+         align-items: center;
+      }
+      
+
+      img {
+         padding: 0;
+         margin: 0;
+         width: 150px;
+         height: auto;
+      
+         @media (max-width: 800px) {
+            width: 120px;
+         }
+      }
+   }
+
+   &__Information {
+      padding-right: 10px;
+      flex-grow: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+   }
+   &__Name {
+      flex-basis: 70%;
+      height: 60px;
+      width: 0;
+      display: flex;
+      align-items: center;
+   }
+   &__Cost {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   &__Buttons {
+      display: flex;
+      justify-content: space-between;
+      flex-basis: 100%;
+            
+      @media (max-width: 800px) {
+         margin-top: 5px;
+      }
+   }
+}
+.Basket-Total {
+   width: 250px;
+   height: 180px;
+   padding: 10px;
+   margin-left: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   background-color: rgb(228, 228, 228);
+   border-radius: 20px;
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;   
+
+   @media (max-width: 800px) {
+      width: 90%;
+      margin: 1 auto;
+   }
+
+   h1{
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: 500;
+   }
+
+   h2{
+      font-size: 16px;
+      margin-top: 20px;
+      font-weight: 500;
+   }
+
+   .Button-Base{
+      width: 80%;
+      margin: 10px auto;
+   }
+}
+.Counter-Block {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: rgb(243, 243, 243);
+   height: 40px;
+   border-radius: 20px;
+   line-height: 0%;
+
+   .Button-Base {
+      background-color: rgb(243, 243, 243);
+      color: black;
+      width: 30px;
+      height: 30px;
+      line-height: 0%;
+      border-radius: 50%;
+      margin: 0 5px;
+
+      &:active {
+         background-color: #ff663350;
+         box-shadow: 1px 1px 6px 0px #ff6633;
+         transition: box-shadow 0.3s;
+      }
+   }
+}
+
+.Login-Page{
+   padding: 20px 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.Base-Form{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   width: 400px;
+   padding: 15px 25px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 6px 0px #00000049;
+
+   h1{
+      margin: 5px;
+      font-size: 24px;
+   }
+
+   h2{
+      font-size: 20px;
+      font-weight: 400;
+      flex-basis: 100%;
+   }
+
+   div{
+      flex-basis: 100%;
+      margin-top: 10px;
+      
+      label{
+         display: block;
+         margin-bottom: -5px;
+      }
+   }
+
+   .Base-Input{
+      margin-top: 10px;
+      width: 100%;
+   }
+   .Button-Base{
+      margin: 20px 10px 10px 10px;
+      padding: 8px;
+   }
+}
+

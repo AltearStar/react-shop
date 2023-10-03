@@ -1,0 +1,96 @@
+.Select-Base {
+   color: rgb(103, 103, 103);
+   font-size: 16px;
+   min-width: 200px;
+   border: 2px solid #ff6633;
+   border-radius: 4px;
+   padding: 8px 10px;
+
+   option {
+      background-color: rgb(255, 255, 255);
+   }
+}
+
+.Base-Input {
+   color: rgb(103, 103, 103);
+   font-size: 16px;
+   min-width: 300px;
+   border: 2px solid #ff6633;
+   border-radius: 4px;
+   padding: 8px 10px;
+}
+
+.Base-Loader {
+   display: flex;
+   margin: 50px auto;
+   width: 70px;
+   height: 70px;
+   border-top: 3px solid #ff6633;
+   border-radius: 50%;
+   animation-name: BaseLoader;
+   animation-duration: 0.7s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+@keyframes BaseLoader {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.Base-Popup{
+   position: absolute;
+   background-color: rgb(255, 255, 255);
+   width: 600px;
+   height: auto;
+   padding: 20px;
+   border-radius: 15px;
+   display: flex;
+   flex-flow: wrap;
+   justify-content: flex-end;
+      
+   @media (max-width: 800px) {
+      width: 95%;
+   }
+
+   &__substrate{
+      background-color: #00000052;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      &.active{
+         display: flex;
+      }
+
+      &.disable{
+         display: none;
+      }
+   }
+
+   h1{
+      width: 0;
+      flex-basis: 100%;
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+   }
+   h2{      
+      flex-basis: 100%;
+      font-size: 18px;
+      font-weight:400;
+      margin-bottom: 30px;
+   }
+   button{
+      margin-left: 10px;
+   }
+}

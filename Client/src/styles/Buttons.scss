@@ -1,0 +1,64 @@
+.Button-Base {
+   background-color: #ff6633;
+   color: white;
+   font-size: 16px;
+   border: none;
+   border-radius: 4px;
+   padding: 10px 10px;
+   transition: background-color 0.2s;
+   cursor: pointer;
+
+   &:active {
+      background-color: #de4c1b;
+   }
+
+   &.secondary{
+      background-color: rgb(243, 243, 243);
+      color: black;
+      font-weight: bolder;
+   }
+
+   &.secondary:active{
+      color: black;
+      background-color: #ff6633;
+   }
+
+   &.textbutton{
+      background: none;
+      color: gray;
+      line-height: 0;
+      margin-bottom: 10px;
+   }
+
+   &.textbutton:hover {
+      box-shadow: none;
+      color: black;
+   }
+
+   &.Favorite {
+      min-width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 10px;
+      background-color: rgba(243, 243, 243, 50);
+      transition: background-color 0.2s;
+   
+      img {
+         width: 100%;
+         height: 100%;
+      }
+      &:active {
+         background-color: #ff663350;
+         box-shadow: 1px 1px 6px 0px #ff6633;
+         transition: box-shadow 0.3s;
+      }
+   }
+}
+
+button {
+   transition: box-shadow 0.2s;
+}
+button:hover {
+   box-shadow: 1px 1px 4px 0px rgba(5, 5, 5, 0.2);
+}
